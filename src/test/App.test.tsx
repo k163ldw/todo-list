@@ -12,7 +12,7 @@ describe('TodoList 웹앱 통합 기능 검증', () => {
   it('초기 화면에서 빈 상태와 0% 진행률을 올바르게 표시한다', () => {
     render(<App />);
 
-    expect(screen.getByText('나의 할 일')).toBeInTheDocument();
+    expect(screen.getByText('꼭 해야할 일')).toBeInTheDocument();
     expect(screen.getByText('아직 할 일이 없어요')).toBeInTheDocument();
     expect(screen.getByText('0%')).toBeInTheDocument();
     const stats = screen.getByText((_, element) => element?.classList.contains('stats-numbers') ?? false);

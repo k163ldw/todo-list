@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({
           <time className="header-date" dateTime={new Date().toISOString().split('T')[0]}>
             {currentDate}
           </time>
-          <h1 className="header-main-title">나의 할 일</h1>
+          <h1 className="header-main-title">꼭 해야할 일</h1>
           <p className="header-subtitle">작은 실천으로 채우는 하루</p>
         </div>
         <div className="header-stats-badge">
