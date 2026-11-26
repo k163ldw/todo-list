@@ -1,0 +1,204 @@
+.todo-item {
+  list-style: none;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.item-view-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.item-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+  padding: var(--space-1) 0;
+  user-select: none;
+}
+
+/* 커스텀 체크박스 시각 요소 */
+.custom-checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  border: 1.5px solid var(--color-border-control);
+  border-radius: var(--radius-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  color: var(--color-on-primary);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
+}
+
+.native-checkbox:focus-visible + .custom-checkbox {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.todo-item.completed .custom-checkbox {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.todo-text {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  word-break: normal;
+  overflow-wrap: anywhere;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.todo-item.completed .todo-text {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.item-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.action-btn {
+  min-width: var(--target-size);
+  min-height: var(--target-size);
+  padding: 0 var(--space-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.edit-btn {
+  color: var(--color-text-secondary);
+}
+
+.edit-btn:hover {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.delete-btn {
+  color: var(--color-text-muted);
+}
+
+.delete-btn:hover {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+/* 좁은 모바일 화면에서는 버튼 텍스트를 숨기고 44px 정사각 아이콘 버튼으로 유지 */
+@media (max-width: 480px) {
+  .action-text {
+    display: none;
+  }
+}
+
+/* 인라인 수정 모드 */
+.item-edit-mode {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .item-edit-mode {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.edit-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.edit-input {
+  width: 100%;
+  min-height: var(--target-size);
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border-control);
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  outline: none;
+}
+
+.edit-input:focus-visible {
+  border-color: var(--color-focus);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.edit-input.has-error {
+  border-color: var(--color-danger);
+}
+
+.edit-error-text {
+  font-size: var(--font-size-caption);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.edit-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.edit-save-btn {
+  min-height: var(--target-size);
+  padding: 0 var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-small);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-small);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.edit-save-btn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.edit-cancel-btn {
+  min-height: var(--target-size);
+  padding: 0 var(--space-3);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-small);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.edit-cancel-btn:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}

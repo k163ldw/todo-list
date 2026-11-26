@@ -1,0 +1,122 @@
+.filter-search-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .filter-search-container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.filter-tabs {
+  display: inline-flex;
+  background-color: var(--color-surface-muted);
+  padding: 4px;
+  border-radius: var(--radius-control);
+  gap: 4px;
+}
+
+.filter-btn {
+  min-height: var(--target-size);
+  padding: 0 var(--space-4);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-small);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-btn:hover {
+  color: var(--color-text);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.search-bar-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-wrapper {
+  position: absolute;
+  left: var(--space-3);
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 var(--space-10) 0 38px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border-control);
+  border-radius: var(--radius-control);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-standard);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-input:focus-visible {
+  border-color: var(--color-focus);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* 네이티브 취소(X) 버튼 숨김 (커스텀 버튼 사용) */
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: var(--space-2);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-small);
+  transition: color var(--duration-fast) var(--ease-standard),
+              background-color var(--duration-fast) var(--ease-standard);
+}
+
+.search-clear-btn:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-muted);
+}
+
+.search-result-hint {
+  width: 100%;
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  padding-left: var(--space-1);
+}
+
+.highlight-num {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}

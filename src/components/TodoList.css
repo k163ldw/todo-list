@@ -1,0 +1,45 @@
+.todo-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-10) var(--space-4);
+  gap: var(--space-2);
+}
+
+.empty-title {
+  font-size: var(--font-size-section);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.empty-desc {
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+  max-width: 320px;
+}
+
+.empty-action-btn {
+  margin-top: var(--space-3);
+  min-height: var(--target-size);
+  padding: 0 var(--space-4);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-control);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  transition: background-color var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.empty-action-btn:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
